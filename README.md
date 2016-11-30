@@ -1,5 +1,4 @@
 Tar1_Anova 
-
 Program output:
 
 small.txt
