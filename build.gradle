@@ -1,0 +1,31 @@
+plugins {
+    id 'scala'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
+sourceCompatibility = 1.8
+version = '1.0'
+
+
+
+repositories {
+    mavenCentral() 
+}
+
+
+
+dependencies {
+    compile 'org.apache.spark:spark-core_2.11:2.0.2',
+     'org.slf4j:slf4j-log4j12:1.7.21'
+}
+
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'org.bgu.onewayanova.OneWayAnova'
+    }
+}
+
+configurations {
+    /* We don't want the storm-core dependency in our shadowJar */
+    runtime.exclude module: 'spark-core_2.11'
+}
