@@ -1,5 +1,11 @@
 package org.bgu.onewayanova
 
+
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+import org.apache.spark.SparkConf
+import org.slf4j.LoggerFactory
+
 /** Computes one way anova */
 object OneWayAnova {
   val logger = LoggerFactory.getLogger(OneWayAnova.getClass)
