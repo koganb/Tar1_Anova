@@ -23,7 +23,7 @@ object OneWayAnova {
       val sc = new SparkContext(conf)
 
       val stats: scala.collection.Map[String, Stats] = sc.
-        textFile("/tmp/big.txt"). //read file
+        textFile(fileName.get). //read file
         map(_.split(",")). //split row to tuple
         map(a => (a(0), Value(a(1).toDouble, math.pow(a(1).toDouble, 2), 1))).
         flatMap(a => Seq(("All", a._2), (a._1, a._2))). //send for each row 2 keys
