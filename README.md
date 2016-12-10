@@ -20,4 +20,4 @@ big.txt
 
 Commands:
 - docker exec -u 0 -it sandbox bash
-- spark-submit --class org.bgu.onewayanova.OneWayAnova --master local  OneWayAnova-1.0-all.jar /tmp/small.txt
+- spark-submit --class org.bgu.onewayanova.OneWayAnova --master local  build/libs/OneWayAnova-1.0-all.jar /tmp/small.txt
